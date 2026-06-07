@@ -163,6 +163,16 @@ WHERE s.unit_price > (SELECT
 AVG(unit_price) FROM sales)
 ORDER BY 1;
 
+-- Question 20 Correction 
+--
+
+SELECT DISTINCT p.product_name, s.unit_price
+FROM products p
+INNER JOIN sales s ON s.product_id = p.product_id
+WHERE s.unit_price > (SELECT 
+AVG(unit_price) FROM sales)
+ORDER BY 1;
+
 
 
 
